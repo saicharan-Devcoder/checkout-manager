@@ -153,7 +153,7 @@ console.log('Cart value is', cost)
 
 
 
-function runTests() {
+function runTests(): void {
     console.log("Starting Tests...");
 
     /* Test SKUManager */
@@ -178,11 +178,11 @@ var mockedPricingObj = {
 }
 
 
-function testSKUManager() {
+function testSKUManager(): void {
     console.log("Testing SKUManager...");
 
-    const skuManager = new SKUManager();
-    const pricing = skuManager.getSKUsPricing();
+    const skuManager: SKUManager = new SKUManager();
+    const pricing: any = skuManager.getSKUsPricing();
 
     if (pricing["ipd"] !== mockedPricingObj["ipd"]) console.log("SKUManager Test Failed: Incorrect price for 'ipd'.");
 
@@ -217,9 +217,9 @@ function testDiscountManager() {
 function testCheckoutWithSecondSet() {
     console.log("Testing Checkout...");
 
-    const skuManager = new SKUManager();
-    const discountManager = new DiscountManager();
-    const checkout = new Checkout();
+    const skuManager: SKUManager = new SKUManager();
+    const discountManager: DiscountManager = new DiscountManager();
+    const checkout: Checkout = new Checkout();
 
     checkout.scan("atv");
     checkout.scan("ipd");
@@ -244,9 +244,9 @@ function testCheckoutWithSecondSet() {
 function testCheckoutWithFirstSet() {
     console.log("Testing Checkout with first set...");
 
-    const skuManager = new SKUManager();
-    const discountManager = new DiscountManager();
-    const checkout = new Checkout();
+    const skuManager: SKUManager = new SKUManager();
+    const discountManager: DiscountManager = new DiscountManager();
+    const checkout: Checkout = new Checkout();
 
     checkout.scan("atv");
     checkout.scan("atv");
@@ -254,7 +254,7 @@ function testCheckoutWithFirstSet() {
     checkout.scan("vga");
 
 
-    const total = checkout.total(discountManager, skuManager);
+    const total: number = checkout.total(discountManager, skuManager);
 
     if (total !== 249) console.log(`Checkout Test Failed: Expected total 249, but got ${total}`);
 
