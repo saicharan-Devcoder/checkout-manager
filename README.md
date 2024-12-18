@@ -3,7 +3,9 @@
 A simple implementation of a **Checkout Manager** for managing product pricing, bulk discounts, and multi-product offers.
 
 ---
+    
 
+    
 ## **Product Catalog**
 
 | SKU  | Name         | Price     |
